@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru Cevap Yarışması</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .quiz-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        #question {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        .options-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #e9e9e9;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .options-container button:hover {
+            background-color: #dcdcdc;
+        }
+        .options-container button.correct {
+            background-color: #d4edda; /* Green for correct */
+            border-color: #28a745;
+        }
+        .options-container button.incorrect {
+            background-color: #f8d7da; /* Red for incorrect */
+            border-color: #dc3545;
+        }
+        #feedback {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        #score-container {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+        #next-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+        #next-button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Soru Cevap Yarışması</h1>
+        <div id="question-container">
+            <p id="question"></p>
+            <div id="options-container" class="options-container">
+                </div>
+            <p id="feedback"></p>
+            <button id="next-button" class="hidden">Sonraki Soru</button>
+        </div>
+        <div id="score-container" class="hidden">
+            <h2>Yarışma Bitti!</h2>
+            <p>Toplam Puanınız: <span id="final-score">0</span> / 10</p>
+            <button id="restart-button">Yeniden Başla</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
